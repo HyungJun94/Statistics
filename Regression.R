@@ -131,7 +131,24 @@ summary(logitM)
 
 
 
+# Cumulative Logit model 
 
+#library(VGAM)
+age45 <- rep(c(1,0,0),3)
+age59 <- rep(c(0,1,0),3)
+diag <-  rep(c('1:monthly','2:often','3:never'), c(3,3,3))
+count <- c(91,150,109,90,200,198,51,155,172)
+data <- data.frame(age45, age59, diag, count)
+# proportional logit model
+cumul <- vglm(ordered(diag)~age45+age59, family=cumulative(parallel=T),
+              weights=count, data=data)
+# no proportional logit assumption
+not_cumul <- vglm(ordered(diag)~age45+age59, family=cumulative(parallel=F),
+                  weights=count, data=data)
+# assumption check
+lrtest(cumul, not_cumul)
+# model summary
+summary(cumul)
 
 
 
