@@ -26,7 +26,7 @@
 # fine fuel: ignition components in forest that easily started to burn (leaves, twig etc.)
 
 ## data generation ------------------------------------------------------------------------------------------
-forest_fires <- read.csv('C:/Users/hlim1/OneDrive/¹®¼­/KOREA UNIV/2020-2/Åë°èºÐ¼®¹æ¹ý·Ð/forestfires.csv', header=T)
+forest_fires <- read.csv('C:/Users/hlim1/OneDrive/Â¹Â®Â¼Â­/KOREA UNIV/2020-2/Ã…Ã«Â°Ã¨ÂºÃÂ¼Â®Â¹Ã¦Â¹Ã½Â·Ã/forestfires.csv', header=T)
 
 ## EDA ------------------------------------------------------------------------------------------
 str(forest_fires)
